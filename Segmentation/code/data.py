@@ -57,21 +57,34 @@ def load_data(img_dir, mask_dir=None):
 
         # combine and highlight the foreground regions
         mask[(np.any(mask != LANE_COLOR, axis=2)) & (np.any(mask != ARCWAY_COLOR, axis=2))] = np.array([0, 0, 0])
-        mask[np.any(mask != 0, axis=2)] = 255
+        mask[np.any(mask != 0, axis=2)] = 1
+        mask = cv2.resize(mask, (IM_WIDTH, IM_HEIGHT))
         mask = mask[:, :, 0]
+        masks[counter, 0, :] = 1 - mask
+        masks[counter, 1, :] = mask
 
-        masks[counter, 0, :] = 1
-
-
-
+        # increase the counter
         counter += 1
 
-    rval = torch.from_numpy(np.moveaxis(imgs, 3, 1))
-    return rval
+    # change to torch tensor, move the channel forward to the 2nd axis
+    imgs = torch.from_numpy(np.moveaxis(imgs, 3, 1))
+    masks = torch.from_numpy(masks)
+
+    # cast as float32
+    return imgs.type(torch.float32), masks.type(torch.float32)
 
 
+# def imshow(img):
+#     cv2.imshow('image', img)
+#     cv2.waitKey(0)
+#     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
 
-    X = load_data(r"../raw_data/toy_dataset")
-    print(X.shape)
+    X, y = load_data(r"../raw_data/toy_dataset")
+    print(X.shape, y.shape)
+
+    import model
+    segnet = model.SegNet(transfer_learning=False)
+    pred = segnet(X[:10, :, :, :])
+    print("passed")
