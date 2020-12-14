@@ -24,7 +24,7 @@ To achieve better understanding of autonomous vehicle’s surroundings, we propo
 <img src="https://github.com/zuoyigehaobing/LaneUnderstanding/blob/main/demo/camvid_itr2_val_15fps.gif" width="600">
 
 
-### On Camvid training dataset (Note that we usd this dataset in our training):
+### On Camvid training dataset (Note that we used this dataset in our training):
 
 <img src="https://github.com/zuoyigehaobing/LaneUnderstanding/blob/main/demo/camvid_itr2_train_5fps.gif" width="600">
 
