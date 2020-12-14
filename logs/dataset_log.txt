@@ -1,2 +1,4 @@
 Camvid [from Kaggle]:
     https://www.kaggle.com/carlolepelaars/camvid
+KiTTi dataset:
+    http://www.cvlibs.net/datasets/kitti/
