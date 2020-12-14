@@ -14,3 +14,4 @@ pip install keras
 pip install torch
 pip install torchvision
 pip install torchsummary
+pip install imgaug

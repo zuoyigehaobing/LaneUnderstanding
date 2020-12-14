@@ -6,7 +6,6 @@ Logs:
 
 To be discussed:
     - Freeze encoding layers?
-    -
 """
 import torch
 import torch.nn as nn

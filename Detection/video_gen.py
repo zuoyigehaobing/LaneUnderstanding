@@ -1,3 +1,7 @@
+"""
+Demo video generator, this is supposed to be used in google colab
+"""
+
 # -*- coding: utf-8 -*-
 import numpy as np
 import cv2
@@ -7,7 +11,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 imgdir = "data/camvid_res/test_res"
-    # "/content/drive/Shared drives/EECS504/OverlayResults/Kitti_itr1/testing_seg_det/"
+# "/content/drive/Shared drives/EECS504/OverlayResults/Kitti_itr1/testing_seg_det/"
 filenames = [img for img in glob.glob(imgdir + "*.png")]
 filenames.sort()
 
