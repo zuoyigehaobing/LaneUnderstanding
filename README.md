@@ -41,7 +41,7 @@ To achieve better understanding of autonomous vehicle’s surroundings, we propo
 
 ### Contact
 
-Bingzhao Shan, Songlin Liu, Zihan Wang, Zuoyi Li
+{Bingzhao Shan, Songlin Liu, Zihan Wang, Zuoyi Li} @ Umich
 
 
 #### Some intermediate SegNet result can be found [here](https://github.com/zuoyigehaobing/LaneUnderstanding/blob/main/Segmentation/code/SegNet_on_colab.pdf)
