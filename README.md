@@ -1,5 +1,4 @@
-# Face_Detection
-
+# Combining Road Segmentation and Traffic Object Detection
 To achieve better understanding of autonomous vehicle’s surroundings, we proposed a new pipeline by combining custom variants of SegNet for road segmentation and YOLOv1 for traffic object detection. By utilizing transfer learning and novel image augmentation that is not mentioned in the original configuration, our model obtained better performance on chosen datasets. We were able to achieve good results on both in-domain and out-domain traffic datasets captured in real life.
 
 <img src="https://github.com/zuoyigehaobing/LaneUnderstanding/blob/main/demo/pipeline.png" width="600" height="200">
