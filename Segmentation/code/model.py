@@ -6,7 +6,7 @@ Logs:
 
 To be discussed:
     - Freeze encoding layers?
-    - nn.ReLU inplace=False?
+    -
 """
 import torch
 import torch.nn as nn
@@ -31,7 +31,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=64),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv01 = nn.Sequential(
@@ -42,7 +42,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=64),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Block2: Size = 2:1
@@ -54,7 +54,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=128),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv11 = nn.Sequential(
@@ -65,7 +65,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=128),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Block3: Size = 4:1
@@ -77,7 +77,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv21 = nn.Sequential(
@@ -88,7 +88,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv22 = nn.Sequential(
@@ -99,7 +99,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Block3: Size = 8:1
@@ -111,7 +111,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Block4: Size = 16:1
@@ -123,7 +123,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv32 = nn.Sequential(
@@ -134,7 +134,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Block4: Size = 32:1
@@ -146,7 +146,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv41 = nn.Sequential(
@@ -157,7 +157,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.encoder_conv42 = nn.Sequential(
@@ -168,7 +168,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # Transfer learning from vgg16
@@ -198,7 +198,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv41 = nn.Sequential(
@@ -209,7 +209,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv40 = nn.Sequential(
@@ -220,7 +220,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv32 = nn.Sequential(
@@ -231,7 +231,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv31 = nn.Sequential(
@@ -242,7 +242,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=512),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv30 = nn.Sequential(
@@ -253,7 +253,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv22 = nn.Sequential(
@@ -264,7 +264,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv21 = nn.Sequential(
@@ -275,7 +275,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=256),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv20 = nn.Sequential(
@@ -286,7 +286,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=128),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv11 = nn.Sequential(
@@ -297,7 +297,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=128),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv11 = nn.Sequential(
@@ -308,7 +308,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=128),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv10 = nn.Sequential(
@@ -319,7 +319,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=64),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         self.decoder_conv01 = nn.Sequential(
@@ -330,7 +330,7 @@ class SegNet(nn.Module):
                       padding=(1, 1)
                       ),
             nn.BatchNorm2d(num_features=64),
-            nn.ReLU(inplace=False)
+            nn.ReLU(inplace=True)
         )
 
         # no bn and relu before the final layer
